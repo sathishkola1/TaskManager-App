@@ -49,7 +49,7 @@ router.post('/api/users/logout',auth,async (req,res)=>{
     try {
         req.User.tokens=req.User.tokens.filter((token)=>token.token!==req.token)
         await req.User.save()
-        res.send()
+        res.send({msg:"successfully logged out"})
     } catch (error) {
         res.status(500).send(error)
     }
@@ -59,7 +59,7 @@ router.post('/users/logoutAll',auth,async (req,res)=>{
     try {
         req.User.tokens=[]
         await req.User.save()
-        res.send()
+        res.send({msg:"successfully logged out"})
     } catch (error) {
         res.status(500).send(error)
     }
