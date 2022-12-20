@@ -10,7 +10,7 @@ function App() {
   return (
  
       <BrowserRouter>
-      <main className="py-3">
+      <main className="py">
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/register" element={<Register />} />

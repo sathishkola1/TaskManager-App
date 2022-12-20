@@ -45,7 +45,7 @@ router.post('/api/users/login',async(req,res)=>{
     }
 })
 
-router.post('api/users/logout',auth,async (req,res)=>{
+router.post('/api/users/logout',auth,async (req,res)=>{
     try {
         req.User.tokens=req.User.tokens.filter((token)=>token.token!==req.token)
         await req.User.save()
