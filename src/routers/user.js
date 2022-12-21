@@ -41,7 +41,7 @@ router.post('/api/users/login',async(req,res)=>{
         let token=await User.generateAuthToken()
         res.send({status:'OK',token})
     } catch (error) {
-        res.status(401).send({status:'ERROR',error})
+        res.status(401).send({status:'ERROR',error:error.message})
     }
 })
 
